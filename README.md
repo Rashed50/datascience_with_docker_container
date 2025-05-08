@@ -93,6 +93,46 @@
     docker run --name docker_container_name docker_image_name
 ```
 
+### I think till this step everything fine.
+    but here you have to create everytime new container becasue if container exist system will 
+    show duplicate container when you run above container run command. So we can do other way where
+    you don't need to execute everytime docker build and run command. Now create another bash file
+    which name is "run.sh". inside the file write the below programe 
+
+```
+    # Stop and remove existing container if it exists
+    docker rm -f docker_container_name 2>/dev/null
+
+    # Build the image
+    docker build -t docker_image_name .
+
+    # Run the container
+    docker run --name docker_container_name docker_image_name
+
+    # Copy output from container to host
+    docker cp docker_container_name:/app/output.csv .
+
+    # Optional: remove container after run
+    docker rm docker_container_name
+
+```
+
+# Now run the run.sh bash file from bash terminal
+    Above all command we excute using cmd terminal. But bash command  run in ubuntu,linux or macos system.
+    So how to run bash command in window. To do this just open you terminal from your project folder
+    (How you can do , I already descibe in above description). Then type just "wsl" and press enter command that will changed
+    you cmd terminal to bash command. where you will "root/your_computer_user_name" instead of your project 
+    folder name. Now you have to give excute permission on your "run.sh" file. Now you can execute below command
+
+```
+    chmod +x run.sh  
+    bash run.sh or ./run.sh
+```
+
+First line is for giving excution permission to the login user
+Second line will run the run.sh file where we mentioned to build docker image
+then run docker container using builded docker image. After successfully run every things 
+docker container will remove by excuting last line.
 
 
 
