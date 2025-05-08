@@ -118,12 +118,14 @@
 ```
 
 # Now run the run.sh bash file from bash terminal
-    Above all command we excute using cmd terminal. But bash command  run in ubuntu,linux or macos system.
-    So how to run bash command in window. To do this just open you terminal from your project folder
-    (How you can do , I already descibe in above description). Then type just "wsl" and press enter command that will changed
-    you cmd terminal to bash command. where you will "root/your_computer_user_name" instead of your project 
-    folder name. Now you have to give excute permission on your "run.sh" file. Now you can execute below command
-
+    Above all command we excute using cmd terminal. But bash command  run in ubuntu,
+    linux or macos system.So how to run bash command in window. To do this just 
+    open you terminal from your project folder (How you can do , I already descibe
+     in above description). Then type just "wsl" and press enter command that will changed
+    you cmd terminal to bash command. where you will "root/your_computer_user_name"
+     instead of your project  folder name. Now you have to give excute permission 
+     on your "run.sh" file. Now you can execute below command
+     
 ```
     chmod +x run.sh  
     bash run.sh or ./run.sh
